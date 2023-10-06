@@ -6,32 +6,24 @@ const allImages = document.querySelectorAll('#slides img')
 let moveWidth = 0
 
 const handleNextClick = (e) => {
-  moveWidth += 500
-  slidesEl.style.translate = `-${moveWidth}px`
-  controlButtons()
+  if (moveWidth === (allImages.length - 1) * 500) {
+    moveWidth = 0
+    slidesEl.style.translate = `-${moveWidth}px`
+  } else {
+    moveWidth += 500
+    slidesEl.style.translate = `-${moveWidth}px`
+  }
 }
 
 const handlePrevClick = (e) => {
-  moveWidth -= 500
-  slidesEl.style.translate = `-${moveWidth}px`
-  controlButtons()
-}
-
-const controlButtons = () => {
   if (moveWidth === 0) {
-    prevEl.setAttribute('disabled', true)
+    moveWidth = (allImages.length - 1) * 500
+    slidesEl.style.translate = `-${moveWidth}px`
   } else {
-    prevEl.removeAttribute('disabled')
-  }
-
-  if (moveWidth === (allImages.length - 1) * 500) {
-    nextEl.setAttribute('disabled', true)
-  } else {
-    nextEl.removeAttribute('disabled')
+    moveWidth -= 500
+    slidesEl.style.translate = `-${moveWidth}px`
   }
 }
-
-controlButtons()
 
 nextEl.addEventListener('click', handleNextClick)
 prevEl.addEventListener('click', handlePrevClick)
