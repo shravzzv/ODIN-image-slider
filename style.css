@@ -4,11 +4,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-clr: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-clr: #121212;
+  }
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: var(--bg-clr);
 }
 
 .frame {
@@ -60,6 +71,7 @@ img {
   border-radius: 50%;
   padding: 0;
   transition: transform 300ms ease-in-out;
+  background-color: white;
 }
 
 .nav button:hover,
