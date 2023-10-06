@@ -12,7 +12,7 @@ const updateNav = () => {
   allNavBtnElsArr[moveWidth / 500].classList.add('active')
 }
 
-const handleNextClick = (e) => {
+const handleNextClick = () => {
   if (moveWidth === (allImages.length - 1) * 500) {
     moveWidth = 0
     slidesEl.style.translate = `-${moveWidth}px`
@@ -23,7 +23,7 @@ const handleNextClick = (e) => {
   updateNav()
 }
 
-const handlePrevClick = (e) => {
+const handlePrevClick = () => {
   if (moveWidth === 0) {
     moveWidth = (allImages.length - 1) * 500
     slidesEl.style.translate = `-${moveWidth}px`
@@ -51,3 +51,9 @@ Array.from(allImages).forEach((image) => {
 })
 
 updateNav()
+
+const handleInterval = () => {
+  handleNextClick()
+}
+
+setInterval(handleInterval, 5000)
