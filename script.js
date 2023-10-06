@@ -6,6 +6,12 @@ const allImages = document.querySelectorAll('#slides img')
 
 let moveWidth = 0
 
+const updateNav = () => {
+  const allNavBtnElsArr = Array.from(document.querySelectorAll('.nav button'))
+  allNavBtnElsArr.forEach((button) => button.classList.remove('active'))
+  allNavBtnElsArr[moveWidth / 500].classList.add('active')
+}
+
 const handleNextClick = (e) => {
   if (moveWidth === (allImages.length - 1) * 500) {
     moveWidth = 0
@@ -14,6 +20,7 @@ const handleNextClick = (e) => {
     moveWidth += 500
     slidesEl.style.translate = `-${moveWidth}px`
   }
+  updateNav()
 }
 
 const handlePrevClick = (e) => {
@@ -24,12 +31,14 @@ const handlePrevClick = (e) => {
     moveWidth -= 500
     slidesEl.style.translate = `-${moveWidth}px`
   }
+  updateNav()
 }
 
 const handleNavBtnClick = (e) => {
   const index = Array.from(navEl.children).indexOf(e.currentTarget)
   moveWidth = index * 500
   slidesEl.style.translate = `-${moveWidth}px`
+  updateNav()
 }
 
 nextEl.addEventListener('click', handleNextClick)
@@ -40,3 +49,5 @@ Array.from(allImages).forEach((image) => {
   navEl.appendChild(button)
   button.addEventListener('click', handleNavBtnClick)
 })
+
+updateNav()
