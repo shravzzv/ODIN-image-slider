@@ -1,12 +1,12 @@
 # Image slider
 
-Create a simple image carousel.
+Create a simple image carousel, a [lesson](https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions#image-slider:~:text=to%20implement%20it!-,Image%20slider,-Again%2C%20there%E2%80%99s%20not) from The Odin Project.
 
-- [ ] It should contain arrows on each side to advance the image forward or backward.
-- [ ] It should automatically move forward every 5 seconds.
-- [ ] It should contain the little navigation circles at the bottom that indicate which slide you are on (and they should be click-able to advance to that particular slide).
+- [x] It should contain arrows on each side to advance the image forward or backward.
+- [x] It should automatically move forward every 5 seconds.
+- [x] It should contain the little navigation circles at the bottom that indicate which slide you are on (and they should be click-able to advance to that particular slide).
 
-Don’t spend too much time worrying about getting your images to display at the correct size – it’s more important to get the slider sliding.
+> Don’t spend too much time worrying about getting your images to display at the correct size – it’s more important to get the slider sliding.
 
 This one is a little more involved than the last two, so think about how you would set up the different elements within the site.
 
