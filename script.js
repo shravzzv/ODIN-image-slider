@@ -56,3 +56,6 @@ Array.from(allImages).forEach((image) => {
 
 // Automatic slide change every 5 seconds
 setInterval(handleNextClick, 5000)
+
+// 
+updateNav()
